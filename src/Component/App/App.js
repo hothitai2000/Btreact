@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import Score from '../Hooks/Form';
+// import Score from '../Hooks/Form';
+import DrinkMenu from '../Hooks/Menu';
 class App extends React.Component{
   render(){
     return(
       
       <div className='App'>
-        <Score></Score>
+        {/* <Score></Score> */}
+        <DrinkMenu></DrinkMenu>
       </div>
     )
   }

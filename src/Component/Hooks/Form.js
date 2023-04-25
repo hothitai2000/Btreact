@@ -18,7 +18,7 @@ class Score extends Component {
         let key = event.target.name;
         let val = event.target.value;
 
-        this.setState({[key]: val});
+       this.setState({[key]: val});
         this.setState((state)=>({
             avg: parseFloat((parseFloat(state.hk1) + parseFloat(state.hk2))/2),
         }));
@@ -36,7 +36,7 @@ class Score extends Component {
         if(this.state.avg>4.5)this.setState({result:"Được lên lớp"});
         else this.setState({result:"Ở lại lớp"});
     };
-    setXL =()=>{
+    setXL = ()=>{
         if (this.state.avg<4.5) this.setState({xl:"Yếu"});
         else if (this.state.avg<6.5)this.setState({xl:"Trung Bình"});
         else if (this.state.avg<8)this.setState({xl:"Khá"});
@@ -92,7 +92,7 @@ class Score extends Component {
                            {/* <div className='Invalid-feedback'>Điểm không hượp lệ</div> */}
                 </div>
                 <div className='from-group'>
-                        <label htmlFor='hk2'>Xếp loại:</label>
+                        <label htmlFor='hk2'>KẾT QUẢ:</label>
                         <input 
                            type='text'
                            className='form-control'
@@ -100,6 +100,17 @@ class Score extends Component {
                            defaultValue={0}
                            readOnly
                            value={this.state.result}
+                           />
+                </div>
+                <div className='from-group'>
+                        <label htmlFor='hk2'>Xếp loại:</label>
+                        <input 
+                           type='text'
+                           className='form-control'
+                        
+                           defaultValue={0}
+                           readOnly
+                           value={this.state.xl}
                            />
                 </div>
                 <button type="submit" value="submit" className='btn btn-primary'>
